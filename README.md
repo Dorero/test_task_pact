@@ -2,6 +2,7 @@
 
 ## Setup
 ```docker-compose run app bin/rails db:create```
+
 ```docker-compose run app bin/rails db:migrate```
 
 # Run tests

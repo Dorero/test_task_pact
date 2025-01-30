@@ -1,15 +1,15 @@
 services:
-  # app:
-  #   build: .
-  #   volumes:
-  #     - .:/app
-  #   ports:
-  #     - "3000:3000"
-  #   environment:
-  #     RAILS_ENV: test
-  #     DATABASE_HOST: db
-  #   networks:
-  #     - test_task_network
+  app:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    environment:
+      RAILS_ENV: test
+      DATABASE_HOST: db
+    networks:
+      - test_task_network
 
   db:
     image: postgres:17.1-alpine3.20
