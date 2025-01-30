@@ -1,0 +1,32 @@
+services:
+  # app:
+  #   build: .
+  #   volumes:
+  #     - .:/app
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     RAILS_ENV: test
+  #     DATABASE_HOST: db
+  #   networks:
+  #     - test_task_network
+
+  db:
+    image: postgres:17.1-alpine3.20
+    environment:
+      POSTGRES_DB: test_task_development
+      POSTGRES_USER: test_task
+      POSTGRES_PASSWORD: test_task
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - test_task_network
+
+volumes:
+  postgres_data:
+
+
+networks:
+  test_task_network:
